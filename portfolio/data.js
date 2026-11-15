@@ -1,8 +1,7 @@
 /*
   YOUR PORTFOLIO CONTENT
   ----------------------
-  Edit the text below, OR use the "Manage content" button at the bottom of the
-  page, then click "Download data.js" and replace this file.
+  Edit the text below to update the portfolio content.
 
   Images: put files in assets/images and assets/certificates, then write the path,
   e.g. "assets/images/my-project.png".

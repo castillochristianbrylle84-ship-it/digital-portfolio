@@ -8,13 +8,6 @@ A simple static portfolio (HTML, CSS, JavaScript). No install or build step.
 3. Right-click `index.html` > **Open with Live Server**.
 
 ## Add your content
-**Option A: in the browser**
-1. Click **Manage content** at the bottom of the page.
-2. Fill in Profile, add Projects and Certificates (with images), upload your Resume (PDF or Word document).
-3. Click **Download data.js** and replace the `data.js` file in this folder.
-   (Content typed in the browser is only saved in your own browser until you do this.)
-
-**Option B: edit files directly**
 - Edit `data.js`.
 - Put images in `assets/images/` and `assets/certificates/`, and your resume (PDF or Word document) in `assets/resume/`.
 - Reference them by path, e.g. `"assets/images/my-app.png"`.
