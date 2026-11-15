@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <meta name="description" content="Personal digital portfolio" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <a href="#home" class="logo" id="navName">Portfolio</a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-copy">
+        <img id="photo" class="photo" alt="Profile photo" hidden />
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Student portfolio <span class="eyebrow-divider">/</span> <span id="location"></span></p>
+        <h1 id="name">Your Name</h1>
+        <p class="title" id="title">Your Title</p>
+        <p class="lead" id="bio"></p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore my work <span aria-hidden="true">↗</span></a>
+          <a class="btn" href="#about">About me</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-sun"></div>
+        <div class="art-sheet">
+          <span class="art-label">A COLLECTION OF</span>
+          <span class="art-title">Ideas<br />in progress.</span>
+          <span class="art-rule"></span>
+          <span class="art-caption">Learning, making<br />and moving forward.</span>
+          <span class="art-spark">✳</span>
+        </div>
+        <span class="art-orbit orbit-one"></span>
+        <span class="art-orbit orbit-two"></span>
+      </div>
+    </section>
+
+    <section id="about" class="content-section">
+      <div class="section-heading">
+        <p class="section-kicker">A little introduction</p>
+        <h2>About &amp; Skills</h2>
+        <p class="section-summary">The foundations behind the work I do.</p>
+      </div>
+      <div class="about-card">
+        <span class="about-mark" aria-hidden="true">01</span>
+        <div>
+          <p id="education" class="muted"></p>
+          <div id="skills" class="chips"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="content-section">
+      <div class="section-heading">
+        <p class="section-kicker">Learning by doing</p>
+        <h2>Selected Projects</h2>
+        <p class="section-summary">Ideas and skills brought to life through hands-on work.</p>
+      </div>
+      <div id="projectGrid" class="grid"></div>
+    </section>
+
+    <section id="certificates" class="content-section">
+      <div class="section-heading">
+        <p class="section-kicker">Growth &amp; recognition</p>
+        <h2>Certificates</h2>
+        <p class="section-summary">A record of learning milestones and achievements.</p>
+      </div>
+      <div id="certGrid" class="grid"></div>
+    </section>
+
+    <section id="resume" class="content-section">
+      <div class="resume-card">
+        <div>
+          <p class="section-kicker">More about my journey</p>
+          <h2>Resume</h2>
+          <p id="resumeText" class="muted"></p>
+        </div>
+        <div class="actions">
+          <button class="btn primary" id="viewResume">View resume</button>
+          <a class="btn" id="downloadResume" download>Download resume</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="content-section contact-section">
+      <div class="contact-copy">
+        <h2>Connect with me</h2>
+      </div>
+      <div id="contactLinks" class="contact-details"></div>
+    </section>
+  </main>
+
+  <footer>
+    <span id="year"></span>
+    <button class="link-btn" id="openManager" type="button">Manage content</button>
+  </footer>
+
+  <!-- Content manager -->
+  <dialog id="manager">
+    <div class="m-head">
+      <h3>Manage content</h3>
+      <button class="link-btn" id="closeManager" type="button">Close ✕</button>
+    </div>
+    <p class="muted small">
+      Changes save in this browser for preview. To publish them, click
+      <b>Download data.js</b> and replace the <code>data.js</code> file in your project folder.
+    </p>
+
+    <div class="tabs" id="tabs">
+      <button data-tab="profile" class="active">Profile</button>
+      <button data-tab="project">Projects</button>
+      <button data-tab="cert">Certificates</button>
+      <button data-tab="resumeTab">Resume</button>
+    </div>
+
+    <!-- Profile -->
+    <form id="profileForm" class="panel" data-panel="profile">
+      <label>Name <input name="name" /></label>
+      <label>Title <input name="title" /></label>
+      <label>Short bio <textarea name="bio" rows="3"></textarea></label>
+      <label>Location <input name="location" /></label>
+      <label>Email <input name="email" type="email" /></label>
+      <label>Phone number <input name="phone" type="tel" /></label>
+      <label>Facebook URL <input name="facebook" type="url" /></label>
+      <label>GitHub URL <input name="github" /></label>
+      <label>LinkedIn URL <input name="linkedin" /></label>
+      <label>Skills (comma separated) <input name="skills" /></label>
+      <label>Profile photo <input name="photo" type="file" accept="image/*" /></label>
+      <button class="btn primary" type="submit">Save profile</button>
+    </form>
+
+    <!-- Projects -->
+    <div class="panel" data-panel="project" hidden>
+      <form id="projectForm">
+        <label>Title <input name="title" required /></label>
+        <label>Description <textarea name="description" rows="3" required></textarea></label>
+        <label>Tech used (comma separated) <input name="tech" /></label>
+        <label>Live link <input name="link" placeholder="https://..." /></label>
+        <label>Repository link <input name="repo" placeholder="https://github.com/..." /></label>
+        <label>Screenshot <input name="image" type="file" accept="image/*" /></label>
+        <button class="btn primary" type="submit">Add project</button>
+      </form>
+      <ul class="manage-list" id="projectList"></ul>
+    </div>
+
+    <!-- Certificates -->
+    <div class="panel" data-panel="cert" hidden>
+      <form id="certForm">
+        <label>Certificate title <input name="title" required /></label>
+        <label>Issuer <input name="issuer" /></label>
+        <label>Date <input name="date" placeholder="e.g. March 2026" /></label>
+        <label>Verify link <input name="link" placeholder="https://..." /></label>
+        <label>Certificate image <input name="image" type="file" accept="image/*" /></label>
+        <button class="btn primary" type="submit">Add certificate</button>
+      </form>
+      <ul class="manage-list" id="certList"></ul>
+    </div>
+
+    <!-- Resume -->
+    <div class="panel" data-panel="resumeTab" hidden>
+      <label>Upload resume (PDF or Word) <input id="resumeFile" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" /></label>
+      <p class="muted small" id="resumeStatus"></p>
+    </div>
+
+    <div class="m-foot">
+      <button class="btn primary" id="exportData" type="button">Download data.js</button>
+      <button class="btn" id="resetData" type="button">Reset to data.js</button>
+    </div>
+  </dialog>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
